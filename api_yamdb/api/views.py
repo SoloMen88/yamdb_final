@@ -1,26 +1,24 @@
 import django_filters
 from django.contrib.auth.tokens import default_token_generator
+from django.db.models import Avg
 from django.shortcuts import get_object_or_404
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import filters, mixins, status, viewsets
 from rest_framework.decorators import action
 from rest_framework.exceptions import ValidationError
-from rest_framework.permissions import (
-    AllowAny, IsAuthenticated
-)
+from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.viewsets import ModelViewSet
 from rest_framework_simplejwt.tokens import AccessToken
-from django.db.models import Avg
+from reviews.models import Categories, Comment, Genres, Review, Title, User
 
-from reviews.models import Categories, Comment, Genres, Title, User, Review
 from .permissions import IsAdmin, IsAdminModeratorAuthorOrReadOnly, IsReadOnly
 from .serializers import (CategoriesSerializer, CommentSerializer,
                           GenresSerializer, ReviewSerializer,
                           TitlesCreateSerializer, TitlesSerializer,
-                          UserConfirmationSerializer,
-                          UserRegisterSerializer, UserSerializer)
+                          UserConfirmationSerializer, UserRegisterSerializer,
+                          UserSerializer)
 from .utils import send_confirmation_email
 
 

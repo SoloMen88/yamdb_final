@@ -2,17 +2,10 @@ from datetime import datetime as dt
 
 from django.shortcuts import get_object_or_404
 from rest_framework.relations import SlugRelatedField
-from rest_framework.serializers import (
-    CharField,
-    CurrentUserDefault,
-    EmailField,
-    HiddenField,
-    ModelSerializer,
-    Serializer,
-    ValidationError,
-    IntegerField
-)
-
+from rest_framework.serializers import (CharField, CurrentUserDefault,
+                                        EmailField, HiddenField, IntegerField,
+                                        ModelSerializer, Serializer,
+                                        ValidationError)
 from reviews.models import Categories, Comment, Genres, Review, Title, User
 
 
