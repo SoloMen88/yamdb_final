@@ -4,11 +4,14 @@
 В проекте реализован удобный Web API при помощи которого можно выполнять запросы к базе данных сайта.
 Выполнен на Django Rest Framework c использование JSON token аутентификации библиотеки Simple JWT
 
+Проект доступен по адрессу: http://solomen88.ddns.net/
+
 ## Требования:
 - Python (3.7) 
 - Django (2.2.16) 
 - djangorestframework (3.12.4)
 - simplejwt (4.7.2)
+- Docker (20.10.17)
 
 ### Запуск приложения в контейнерах
 
@@ -33,6 +36,8 @@ POSTGRES_PASSWORD=postgres
 DB_HOST=db
 DB_PORT=5432
 SECRET_KEY=key
+DEBUG = False
+ALLOWED_HOSTS = ['*']
 ```
 
 Далее следует запустить docker-compose: 
